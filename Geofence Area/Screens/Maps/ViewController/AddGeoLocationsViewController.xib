@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddGeoLocationsViewController" customModule="Geofence_Area" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="aZN-gl-VEf" id="6wW-Y5-6hG"/>
+                <outlet property="mapView" destination="9zb-1y-qwl" id="DXV-zt-Bj4"/>
+                <outlet property="radiusTextField" destination="tJb-pO-4T4" id="i00-wI-ZlA"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="4g1-LS-a6E">
+                    <rect key="frame" x="0.0" y="44" width="414" height="448"/>
+                    <subviews>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="9zb-1y-qwl">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="318"/>
+                        </mapView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3w-6g-PMh">
+                            <rect key="frame" x="0.0" y="318" width="414" height="130"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Oyj-Bx-xcM">
+                                    <rect key="frame" x="20" y="10" width="374" height="100"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Radius: 1000" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tJb-pO-4T4">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="dOm-pk-QHb"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZN-gl-VEf">
+                                            <rect key="frame" x="0.0" y="60" width="374" height="40"/>
+                                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                            <state key="normal" title="Add">
+                                                <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="Oyj-Bx-xcM" firstAttribute="top" secondItem="F3w-6g-PMh" secondAttribute="top" constant="10" id="NOv-qb-qM7"/>
+                                <constraint firstAttribute="trailing" secondItem="Oyj-Bx-xcM" secondAttribute="trailing" constant="20" id="TUw-Fg-weV"/>
+                                <constraint firstItem="Oyj-Bx-xcM" firstAttribute="leading" secondItem="F3w-6g-PMh" secondAttribute="leading" constant="20" id="jQQ-c0-GgQ"/>
+                                <constraint firstAttribute="bottom" secondItem="Oyj-Bx-xcM" secondAttribute="bottom" constant="20" id="q8K-aj-f6d"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pointer" translatesAutoresizingMaskIntoConstraints="NO" id="rZJ-Rm-47K">
+                    <rect key="frame" x="192" y="188" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Rb6-NO-PKh"/>
+                        <constraint firstAttribute="height" constant="30" id="yda-vB-bAH"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="4g1-LS-a6E" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="DIM-3W-pRk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4g1-LS-a6E" secondAttribute="trailing" id="Kbe-q0-2Ds"/>
+                <constraint firstItem="rZJ-Rm-47K" firstAttribute="centerY" secondItem="9zb-1y-qwl" secondAttribute="centerY" id="OWT-xM-WSk"/>
+                <constraint firstItem="4g1-LS-a6E" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="XbQ-VZ-cgp"/>
+                <constraint firstItem="rZJ-Rm-47K" firstAttribute="centerX" secondItem="9zb-1y-qwl" secondAttribute="centerX" id="nmE-xP-vK6"/>
+                <constraint firstItem="4g1-LS-a6E" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.5" id="vrn-by-SmE"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="121"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pointer" width="25" height="25"/>
+    </resources>
+</document>

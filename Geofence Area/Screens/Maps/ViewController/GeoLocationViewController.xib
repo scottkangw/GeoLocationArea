@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GeoLocationViewController" customModule="Geofence_Area" customModuleProvider="target">
+            <connections>
+                <outlet property="mapView" destination="v95-48-AdW" id="xvy-pL-IL0"/>
+                <outlet property="statusButton" destination="DjJ-gF-P7q" id="Rq6-eZ-v6q"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="v95-48-AdW">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </mapView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DjJ-gF-P7q">
+                    <rect key="frame" x="167" y="772" width="80" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="Iyy-PA-NvJ"/>
+                        <constraint firstAttribute="width" constant="80" id="aF0-ft-7Pm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                    <state key="normal" title="Status"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstItem="v95-48-AdW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CR9-PF-vU7"/>
+                <constraint firstItem="v95-48-AdW" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="InK-fw-DLa"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="v95-48-AdW" secondAttribute="trailing" id="NeZ-DT-Lhc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="v95-48-AdW" secondAttribute="bottom" id="XhX-aY-5Mc"/>
+                <constraint firstItem="DjJ-gF-P7q" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bAP-sL-kbK"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="DjJ-gF-P7q" secondAttribute="bottom" constant="50" id="i6h-jJ-QIr"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="145"/>
+        </view>
+    </objects>
+</document>
