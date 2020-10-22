@@ -11,8 +11,8 @@ import MapKit
 import CoreLocation
 
 class GeoLocationViewController: UIViewController {
-    @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var statusButton: UIButton!
+    @IBOutlet private weak var mapView: MKMapView!
+    @IBOutlet private weak var statusButton: UIButton!
     
     var geolocations: [GeoLocationModel] = []
     var locationManager = CLLocationManager()
@@ -146,6 +146,7 @@ extension GeoLocationViewController {
             }
         }
     }
+    
 }
 
 
@@ -193,6 +194,7 @@ extension GeoLocationViewController: CLLocationManagerDelegate {
         
         network.stopMonitoring()
     }
+    
 }
 
 extension GeoLocationViewController: MKMapViewDelegate {
@@ -207,6 +209,7 @@ extension GeoLocationViewController: MKMapViewDelegate {
         }
         return MKOverlayRenderer(overlay: overlay)
     }
+    
 }
 
 extension MKMapView {
@@ -216,4 +219,5 @@ extension MKMapView {
         let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         setRegion(region, animated: true)
     }
+    
 }
