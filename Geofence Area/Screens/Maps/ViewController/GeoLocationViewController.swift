@@ -16,6 +16,7 @@ class GeoLocationViewController: UIViewController {
     
     var geolocations: [GeoLocationModel] = []
     var locationManager = CLLocationManager()
+    private let viewModel = GeoLocationViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -110,9 +111,6 @@ extension GeoLocationViewController {
         }
     }
     
-    func handleEvent(status: RegionStatus) {
-        statusButton.setTitle(status.rawValue, for: .normal)
-    }
 }
 
 // MARK: -
@@ -140,9 +138,10 @@ extension GeoLocationViewController {
             let distanceInMeters: CLLocationDistance = usersCurrentLocation.distance(from: someOtherLocation)
             
             if distanceInMeters < geofenceArea.radius {
-                handleEvent(status: .inside)
+                statusButton.setTitle(viewModel.handleEvent(status: .inside), for: .normal)
+                
             } else {
-                handleEvent(status: .outside)
+                statusButton.setTitle(viewModel.handleEvent(status: .outside), for: .normal)
             }
         }
     }
@@ -180,7 +179,7 @@ extension GeoLocationViewController: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-        handleEvent(status: .inside)
+        statusButton.setTitle(viewModel.handleEvent(status: .inside), for: .normal)
     }
     
     func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
@@ -189,9 +188,8 @@ extension GeoLocationViewController: CLLocationManagerDelegate {
         network.startMonitoring()
         
         if !network.isOn {
-            handleEvent(status: .outside)
+            statusButton.setTitle(viewModel.handleEvent(status: .outside), for: .normal)
         }
-        
         network.stopMonitoring()
     }
     
@@ -208,16 +206,6 @@ extension GeoLocationViewController: MKMapViewDelegate {
             return circleRenderer
         }
         return MKOverlayRenderer(overlay: overlay)
-    }
-    
-}
-
-extension MKMapView {
-    
-    func zoomToUserLocation() {
-        guard let coordinate = userLocation.location?.coordinate else { return }
-        let region = MKCoordinateRegion(center: coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
-        setRegion(region, animated: true)
     }
     
 }

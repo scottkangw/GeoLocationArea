@@ -42,6 +42,7 @@ extension AddGeoLocationsViewController {
          navigationItem.title = "Add Geo Location"
                navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "location.circle.fill"), style: .plain, target: self, action: #selector(zoomToCurrentLocation))
     }
+    
 }
 
 // MARK: -
@@ -53,7 +54,8 @@ extension AddGeoLocationsViewController {
         
         let identifier = NSUUID().uuidString
         let coordinate = mapView.centerCoordinate
-        let radius = Double(radiusTextField.text!) ?? 0
+        guard let radiusText = radiusTextField.text else { return}
+        let radius = Double(radiusText) ?? 0
         
         delegate?.addGeoViewController(self, didAddCoordinate: coordinate, radius: radius, identifier: identifier
         )
@@ -63,9 +65,4 @@ extension AddGeoLocationsViewController {
         mapView.zoomToUserLocation()
     }
     
-
 }
-
-
-
-

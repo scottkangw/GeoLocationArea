@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D23B47E62549479D004E781D /* GeoLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D23B47E52549479D004E781D /* GeoLocationViewModel.swift */; };
 		D295CDD725402B9200B304B7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D295CDD625402B9200B304B7 /* AppDelegate.swift */; };
 		D295CDD925402B9200B304B7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D295CDD825402B9200B304B7 /* SceneDelegate.swift */; };
 		D295CDE125402B9200B304B7 /* Geofence_Area.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D295CDDF25402B9200B304B7 /* Geofence_Area.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D23B47E52549479D004E781D /* GeoLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoLocationViewModel.swift; sourceTree = "<group>"; };
 		D295CDD325402B9200B304B7 /* Geofence Area.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Geofence Area.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D295CDD625402B9200B304B7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D295CDD825402B9200B304B7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 				D295CE1725402FE700B304B7 /* GeoLocationViewController.xib */,
 				D295CE1F254043D600B304B7 /* AddGeoLocationsViewController.swift */,
 				D295CE20254043D600B304B7 /* AddGeoLocationsViewController.xib */,
+				D23B47E52549479D004E781D /* GeoLocationViewModel.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D295CE21254043D600B304B7 /* AddGeoLocationsViewController.swift in Sources */,
+				D23B47E62549479D004E781D /* GeoLocationViewModel.swift in Sources */,
 				D295CE1125402F1900B304B7 /* NetworkMonitor.swift in Sources */,
 				D295CE1425402F2F00B304B7 /* Utilities.swift in Sources */,
 				D295CE0E25402ED500B304B7 /* GeoLocationModel.swift in Sources */,
